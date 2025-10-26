@@ -387,7 +387,12 @@
       e.preventDefault();
       const data = { name: contactForm.name.value, email: contactForm.email.value, subject: contactForm.subject.value, message: contactForm.message.value };
       try {
-        const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const API_URL = 'https://my-protfolio-vt1u.onrender.com';
+        const res = await fetch(`${API_URL}/api/contact`, { 
+          method: 'POST', 
+          headers: { 'Content-Type': 'application/json' }, 
+          body: JSON.stringify(data) 
+        });
         if (res.ok) { formMsg.classList.remove('hidden'); formMsg.textContent = 'Message sent — thank you!'; setTimeout(()=>{ formMsg.classList.add('hidden'); contactForm.reset(); }, 3000); } else { alert('Failed to send — try again later.'); }
       } catch(err) { alert('Network error — please email directly.'); }
     });
@@ -482,7 +487,8 @@
       try {
         botStatus.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Processing...';
         
-        const res = await fetch('http://localhost:8000/api/chat', {
+        const API_URL = 'https://my-protfolio-vt1u.onrender.com';
+        const res = await fetch(`${API_URL}/api/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: val })
