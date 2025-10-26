@@ -28,21 +28,40 @@ app.config['JSON_SORT_KEYS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
 # Configure CORS for security
+ALLOWED_ORIGINS = [
+    "http://localhost:5000",
+    "https://mujahid9644.github.io",
+    "https://mujahid9644.github.io/my_protfolio"
+]
+
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["http://localhost:5000", "https://your-production-domain.com"],
+        "origins": ALLOWED_ORIGINS,
         "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
+        "allow_headers": ["Content-Type"],
+        "expose_headers": ["Content-Type"],
+        "supports_credentials": False,
+        "max_age": 600  # Cache preflight requests for 10 minutes
     }
 })
 
-# Initialize Gemini clients with error handling
+# API key validation and rotation
 gemini_clients = []
 current_key = 0
 last_switch_time = time.time()
+request_counts = {0: 0, 1: 0}  # Track requests per key
+MAX_REQUESTS_PER_KEY = 60  # Maximum requests per minute per key
+
+def validate_api_keys():
+    if not GEMINI_API_KEY_1 or not GEMINI_API_KEY_2:
+        logger.error("Missing required API keys")
+        raise ValueError("Both API keys must be configured")
+    if GEMINI_API_KEY_1 == GEMINI_API_KEY_2:
+        logger.warning("Using duplicate API keys - recommended to use different keys")
 
 def setup_gemini_clients():
     global gemini_clients
+    validate_api_keys()
     for api_key in [GEMINI_API_KEY_1, GEMINI_API_KEY_2]:
         if api_key:
             try:
