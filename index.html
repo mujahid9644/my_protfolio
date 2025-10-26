@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mujahid Islam — AI Automation Engineer & Junior Data Analyst</title>
+  <meta name="description" content="Mujahid Islam — AI Automation Engineer & Junior Data Analyst. Python, Pandas, NumPy, MySQL, Power BI, Selenium, Make.com, n8n, FastAPI." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root { --glass-bg: rgba(255,255,255,0.06); --glass-border: rgba(255,255,255,0.08); }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); backdrop-filter: blur(8px); border: 1px solid var(--glass-border); }
+    .badge { transition: transform .18s ease, box-shadow .18s ease; }
+    .badge:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.45); }
+    .type-cursor::after { content: '|'; margin-left:6px; opacity:0.9; animation: blink 1s infinite; }
+    @keyframes blink { 0%,50% {opacity:1} 51%,100% {opacity:0} }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(10px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes typing { 0% {opacity:0.3} 50% {opacity:1} 100% {opacity:0.3} }
+    
+    .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+    
+    .typing-animation { display:flex; gap:3px; padding:2px 0; }
+    .typing-animation span { width:4px; height:4px; border-radius:50%; background:currentColor; opacity:0.3; }
+    .typing-animation span:nth-child(1) { animation: typing 1s infinite; }
+    .typing-animation span:nth-child(2) { animation: typing 1s infinite 0.2s; }
+    .typing-animation span:nth-child(3) { animation: typing 1s infinite 0.4s; }
+    
+    @media (max-width: 640px) {
+      #chatbot-window {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        height: 420px;
+        bottom: 80px;
+      }
+      #chatbot-bubble {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-gray-900 to-[#070617] text-gray-100">
+
+  <!-- NAV + SOCIAL -->
+  <nav class="fixed w-full z-40 glass">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">MI</div>
+        <div>
+          <h1 class="text-lg font-semibold">Mujahid Islam</h1>
+          <p class="text-xs text-gray-300">AI Automation • Junior Data Analyst</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-blue-300 transition">About</a>
+        <a href="#skills" class="hover:text-blue-300 transition">Skills</a>
+        <a href="#projects" class="hover:text-blue-300 transition">Projects</a>
+        <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md shadow">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="p-2 rounded-md hover:bg-white/5"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <div class="px-4 py-1 inline-block rounded-full bg-blue-600/20 text-blue-300 text-sm">Automation • Integration • Data Analysis</div>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight">Automation Developer<br class="hidden md:block"/> & Data Analyst</h2>
+        <p class="text-gray-300 max-w-xl">I specialize in building intelligent automation solutions using Python, Selenium, and no-code platforms like Make.com and n8n. With expertise in API integrations, database management (MySQL), and AI-powered development, I create efficient workflows and data-driven solutions. I also have experience in data analysis and AI-assisted web development.</p>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 text-sm">Python Development</span>
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-green-600 to-teal-600 text-sm">Selenium Automation</span>
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-yellow-600 to-orange-500 text-sm">Make.com & n8n</span>
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 text-sm">API Integration</span>
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-pink-600 to-red-600 text-sm">MySQL Database</span>
+          <span class="badge px-4 py-2 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 text-sm">Data Analysis</span>
+        </div>
+
+        <div class="flex items-center gap-4 pt-4">
+          <a href="#projects" class="px-6 py-3 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 font-medium shadow-lg">View Projects</a>
+          <a href="#contact" class="px-6 py-3 rounded-md border border-gray-700">Contact Me</a>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-400"><span class="type-cursor" id="typing"></span></div>
+      </div>
+
+      <!-- profile -->
+      <div class="relative">
+        <div class="glass rounded-2xl p-6 shadow-2xl flex gap-6 items-center">
+          <div class="w-36 h-36 rounded-full overflow-hidden shrink-0 border-2 border-white/10"><img src="protfolio.jpg" alt="Mujahid Islam" class="w-full h-full object-cover"></div>
+          <div>
+            <h3 class="text-xl font-semibold">Mujahid Islam</h3>
+            <p class="text-sm text-gray-300">AI Automation Engineer & Junior Data Analyst</p>
+            <div class="mt-3 text-sm text-gray-300 space-y-1">
+              <div><i class="fa fa-map-marker-alt mr-2 text-blue-400"></i>Dhaka, Bangladesh</div>
+              <div><i class="fa fa-envelope mr-2 text-green-400"></i><a href="mailto:mujahidislam2540@gmail.com" class="text-gray-200 hover:text-white">mujahidislam2540@gmail.com</a></div>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://github.com/mujahid9644" target="_blank" class="p-2 rounded-md bg-white/5 hover:bg-white/8"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/mujahid-islam-648532308/" target="_blank" class="p-2 rounded-md bg-white/5 hover:bg-white/8"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/mujahid.islam.18698" target="_blank" class="p-2 rounded-md bg-white/5 hover:bg-white/8"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/ftv.mjd" target="_blank" class="p-2 rounded-md bg-white/5 hover:bg-white/8"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <div class="glass p-4 rounded-lg"><div class="text-xs text-gray-400">AI & Automation</div><div class="mt-2 font-medium">Gemini AI • Python</div></div>
+          <div class="glass p-4 rounded-lg"><div class="text-xs text-gray-400">Integrations</div><div class="mt-2 font-medium">n8n • Webhooks</div></div>
+          <div class="glass p-4 rounded-lg"><div class="text-xs text-gray-400">Automation</div><div class="mt-2 font-medium">Selenium • APIs</div></div>
+          <div class="glass p-4 rounded-lg"><div class="text-xs text-gray-400">APIs</div><div class="mt-2 font-medium">FastAPI • Token rotation</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+      <!-- SKILLS (updated) -->
+  <section id="skills" class="py-16 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center">Technical Skills</h3>
+      <p class="text-center text-gray-400 mt-2">Core competencies & technologies</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <h4 class="font-semibold mb-3 text-blue-400">Automation Development</h4>
+          <div class="flex flex-col gap-2 text-sm text-gray-300">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-code text-blue-500"></i>
+              <span>Python Programming</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-robot text-blue-500"></i>
+              <span>Selenium Web Automation</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-cogs text-blue-500"></i>
+              <span>Automated Testing & Scripts</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-tasks text-blue-500"></i>
+              <span>Task Scheduling & Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <h4 class="font-semibold mb-3 text-green-400">Integration & Workflows</h4>
+          <div class="flex flex-col gap-2 text-sm text-gray-300">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-plug text-green-500"></i>
+              <span>Make.com Flow Building</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-network-wired text-green-500"></i>
+              <span>n8n Workflow Design</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-code-branch text-green-500"></i>
+              <span>API Integration & Testing</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-sync text-green-500"></i>
+              <span>Automated Data Flows</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+          <h4 class="font-semibold mb-3 text-purple-400">Data & Analytics</h4>
+          <div class="flex flex-col gap-2 text-sm text-gray-300">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-database text-purple-500"></i>
+              <span>MySQL Database Management</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-chart-bar text-purple-500"></i>
+              <span>Basic Data Analysis</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-brain text-purple-500"></i>
+              <span>AI-Assisted Development</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-file-code text-purple-500"></i>
+              <span>Data Extraction & Processing</span>
+            </div>
+          </div>
+        </div>
+      </div>      <div class="mt-8">
+        <h4 class="font-semibold">Other</h4>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="px-3 py-1 rounded-full bg-white/6 text-sm">Python</span>
+          <span class="px-3 py-1 rounded-full bg-white/6 text-sm">Pandas</span>
+          <span class="px-3 py-1 rounded-full bg-white/6 text-sm">MySQL</span>
+          <span class="px-3 py-1 rounded-full bg-white/6 text-sm">Power BI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (updated to highlight integrations) -->
+  <section id="projects" class="py-16 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center">Featured Projects</h3>
+      <p class="text-center text-gray-400 mt-2">Automation, integrations & data work</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-xl overflow-hidden shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+          <div class="text-blue-400 mb-4"><i class="fas fa-robot text-3xl"></i></div>
+          <h4 class="font-semibold text-lg">AI-Powered Automation</h4>
+          <p class="text-sm text-gray-300 mt-2">Developed automated workflows using Python and Selenium for web automation, integrated with AI services for intelligent task handling and data processing.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1.5 rounded-full bg-blue-500/20 text-blue-300">Python</span>
+            <span class="px-3 py-1.5 rounded-full bg-blue-500/20 text-blue-300">Selenium</span>
+            <span class="px-3 py-1.5 rounded-full bg-blue-500/20 text-blue-300">AI Integration</span>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl overflow-hidden shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+          <div class="text-green-400 mb-4"><i class="fas fa-plug text-3xl"></i></div>
+          <h4 class="font-semibold text-lg">Integration Specialist</h4>
+          <p class="text-sm text-gray-300 mt-2">Created seamless automated workflows using Make.com and n8n, connecting various services and APIs to enable efficient business processes and data flow.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-300">Make.com</span>
+            <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-300">n8n</span>
+            <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-300">API Integration</span>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl overflow-hidden shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+          <div class="text-purple-400 mb-4"><i class="fas fa-database text-3xl"></i></div>
+          <h4 class="font-semibold text-lg">Data Management</h4>
+          <p class="text-sm text-gray-300 mt-2">Built data pipelines and analysis workflows using MySQL and Python, enabling efficient data storage, retrieval, and basic analysis for business insights.</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1.5 rounded-full bg-purple-500/20 text-purple-300">MySQL</span>
+            <span class="px-3 py-1.5 rounded-full bg-purple-500/20 text-purple-300">Data Analysis</span>
+            <span class="px-3 py-1.5 rounded-full bg-purple-500/20 text-purple-300">Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center">Get In Touch</h3>
+      <p class="text-center text-gray-400 mt-2">Looking for automation, integration or chatbot work? Send a message.</p>
+
+      <div class="mt-8 glass rounded-xl p-6">
+        <form id="contact-form" method="post" action="/api/contact" class="grid grid-cols-1 gap-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input required name="name" id="name" placeholder="Your name" class="p-3 rounded bg-gray-800 border border-gray-700" />
+            <input required name="email" id="email" placeholder="you@example.com" type="email" class="p-3 rounded bg-gray-800 border border-gray-700" />
+          </div>
+          <input name="subject" id="subject" placeholder="Subject" class="p-3 rounded bg-gray-800 border border-gray-700" />
+          <textarea required name="message" id="message" rows="5" placeholder="Tell me about the role or project..." class="p-3 rounded bg-gray-800 border border-gray-700"></textarea>
+          <div class="flex items-center justify-between">
+            <div id="form-message" class="text-sm text-green-400 hidden">Message sent — thank you!</div>
+            <div class="flex gap-3">
+              <button type="submit" id="send-btn" class="px-6 py-3 rounded bg-gradient-to-r from-blue-600 to-purple-600">Send</button>
+              <a href="mailto:mujahidislam2540@gmail.com" class="px-6 py-3 rounded border border-gray-700">Email</a>
+            </div>
+          </div>
+        </form>
+        <p class="text-xs text-gray-400 mt-3">Note: To forward incoming website messages to Gmail automatically, set up a backend endpoint <code>/api/contact</code> that sends an email using Gmail SMTP or Gmail API. (HTML cannot configure Gmail forwarding by itself.)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6 text-center text-gray-400">
+      <div class="flex justify-center gap-4 mb-4">
+        <a href="https://github.com/mujahid9644" target="_blank" class="hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+        <a href="https://www.linkedin.com/in/mujahid-islam-648532308/" target="_blank" class="hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://facebook.com/" target="_blank" class="hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="https://instagram.com/" target="_blank" class="hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+      </div>
+      <div>© <span id="year"></span> Mujahid Islam. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Enhanced Chatbot with better UI/UX -->
+  <div id="chatbot-bubble" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white shadow-xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300 z-50 cursor-pointer">
+    <i class="fas fa-comment-dots text-xl transition-transform duration-300"></i>
+  </div>
+
+  <div id="chatbot-window" class="fixed bottom-24 right-6 w-96 h-[500px] rounded-2xl glass overflow-hidden shadow-2xl z-50 transform scale-0 origin-bottom-right transition-all duration-300">
+    <div class="flex justify-between items-center p-4 border-b border-white/10 bg-gradient-to-r from-gray-900 to-gray-800">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg">
+          <span class="text-sm font-medium">MI</span>
+        </div>
+        <div>
+          <div class="font-semibold text-white">Mujahid's Assistant</div>
+          <div class="text-xs text-gray-400 flex items-center gap-2">
+            <i class="fas fa-circle text-green-500 text-[6px] animate-pulse"></i>
+            <span>Automation & Integration Expert</span>
+          </div>
+        </div>
+      </div>
+      <button id="chat-close" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <div id="chat-messages" class="p-4 h-[calc(100%-140px)] overflow-y-auto bg-gradient-to-b from-gray-900 to-gray-800 text-sm flex flex-col gap-3">
+      <div class="bg-gradient-to-r from-gray-800 to-gray-700/80 rounded-lg p-4 self-start text-gray-200 max-w-[85%] shadow-lg">
+        <p>👋 Hello! I'm here to help with:</p>
+        <ul class="mt-2 space-y-1 text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fas fa-check text-blue-400 text-xs"></i>
+            <span>Automation solutions</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-check text-blue-400 text-xs"></i>
+            <span>Integration services</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-check text-blue-400 text-xs"></i>
+            <span>Custom development</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p-4 border-t border-white/10 bg-gradient-to-r from-gray-900 to-gray-800">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50"></div>
+        <div class="text-xs text-gray-500 flex items-center gap-1">
+          <i class="fas fa-shield-alt"></i>
+          <span>Secure Chat</span>
+        </div>
+        <div class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50"></div>
+      </div>
+      
+      <form id="chat-form" class="flex items-center gap-3">
+        <div class="relative flex-1 group">
+          <input id="chat-input" 
+            placeholder="Ask about automation services or request a quote..." 
+            class="w-full px-4 py-3.5 rounded-xl bg-gray-800/90 border-2 border-gray-700/50 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 hover:border-gray-600/50 transition-all duration-200 text-sm placeholder:text-gray-500"
+          />
+          <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none transition-opacity group-focus-within:opacity-0">
+            <i class="fas fa-message text-sm"></i>
+          </div>
+        </div>
+        <button type="submit" 
+          class="px-5 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-medium shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-200 flex items-center gap-2 group"
+        >
+          <span class="group-hover:translate-x-0.5 transition-transform">Send</span>
+          <i class="fas fa-paper-plane text-sm group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+      </form>
+      
+      <div class="mt-3 px-1 flex items-center justify-between text-xs text-gray-400">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-circle text-green-500 text-[6px] animate-pulse"></i>
+          <span id="bot-status" class="font-medium">Connected</span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-500">
+          <i class="fas fa-key text-[10px]"></i>
+          <span>End-to-end encrypted</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menu-btn'), mobileMenu = document.getElementById('mobile-menu'); if (menuBtn) menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+    const roles = ["AI Automation Engineer", "Junior Data Analyst", "Python Developer"]; let rIndex = 0, cIndex = 0; const typingEl = document.getElementById('typing');
+    function typeRole() { const text = roles[rIndex]; if (cIndex <= text.length) { typingEl.textContent = text.substring(0, cIndex); cIndex++; setTimeout(typeRole, 90); } else { setTimeout(eraseRole, 1500); } }
+    function eraseRole() { const text = roles[rIndex]; if (cIndex >= 0) { typingEl.textContent = text.substring(0, cIndex); cIndex--; setTimeout(eraseRole, 40); } else { rIndex = (rIndex + 1) % roles.length; setTimeout(typeRole, 500); } }
+    if (typingEl) typeRole();
+
+    // contact form — send to backend endpoint /api/contact (server should forward to Gmail or store)
+    const contactForm = document.getElementById('contact-form'); const formMsg = document.getElementById('form-message');
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = { name: contactForm.name.value, email: contactForm.email.value, subject: contactForm.subject.value, message: contactForm.message.value };
+      try {
+        const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        if (res.ok) { formMsg.classList.remove('hidden'); formMsg.textContent = 'Message sent — thank you!'; setTimeout(()=>{ formMsg.classList.add('hidden'); contactForm.reset(); }, 3000); } else { alert('Failed to send — try again later.'); }
+      } catch(err) { alert('Network error — please email directly.'); }
+    });
+
+    // Enhanced Chatbot UI with better UX
+    const chatBubble = document.getElementById('chatbot-bubble');
+    const chatWindow = document.getElementById('chatbot-window');
+    const chatClose = document.getElementById('chat-close');
+    const chatForm = document.getElementById('chat-form');
+    const chatMessages = document.getElementById('chat-messages');
+    const botStatus = document.getElementById('bot-status');
+    const chatInput = document.getElementById('chat-input');
+    
+    // Track chat window state
+    let isChatOpen = false;
+    
+    // Animate chat bubble on load
+    setTimeout(() => {
+      chatBubble.classList.add('animate-bounce');
+      setTimeout(() => chatBubble.classList.remove('animate-bounce'), 1000);
+    }, 2000);
+
+    // Chat window toggle with smooth animation
+    function toggleChat() {
+      isChatOpen = !isChatOpen; // Toggle the state
+      
+      if (isChatOpen) {
+        chatWindow.classList.remove('scale-0');
+        chatWindow.classList.add('scale-100');
+        chatInput.focus();
+        chatBubble.innerHTML = '<i class="fas fa-times"></i>'; // Change to close icon
+        chatBubble.classList.add('rotate-180');
+      } else {
+        chatWindow.classList.remove('scale-100');
+        chatWindow.classList.add('scale-0');
+        chatBubble.innerHTML = '<i class="fas fa-comment-dots"></i>'; // Change back to chat icon
+        chatBubble.classList.remove('rotate-180');
+      }
+    }
+
+    // Single click handler for the bubble
+    chatBubble.addEventListener('click', toggleChat);
+    
+    // Optional: Keep the close button working too
+    chatClose.addEventListener('click', () => {
+      if (isChatOpen) toggleChat();
+    });
+
+    // Enhanced message display
+    function appendMsg(text, from='bot') {
+      const div = document.createElement('div');
+      const isBot = from === 'bot';
+      
+      div.className = isBot 
+        ? 'bg-gradient-to-r from-gray-800 to-gray-700/80 rounded-lg p-4 self-start text-gray-200 max-w-[85%] shadow-lg animate-fadeIn'
+        : 'bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-4 self-end text-white max-w-[85%] shadow-lg animate-fadeIn';
+      
+      // Add typing animation for bot messages
+      if (isBot) {
+        div.innerHTML = '<div class="typing-animation"><span>•</span><span>•</span><span>•</span></div>';
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        setTimeout(() => {
+          div.innerHTML = text;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 500);
+      } else {
+        div.textContent = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    // Handle form submission with enhanced error handling
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = document.getElementById('chat-input');
+      const val = input.value.trim();
+      
+      if (!val) return;
+      
+      // Disable input and show sending state
+      input.disabled = true;
+      const submitBtn = chatForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+      
+      appendMsg(val, 'user');
+      input.value = '';
+
+      try {
+        botStatus.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Processing...';
+        
+        const res = await fetch('http://localhost:8000/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: val })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.error || 'Service unavailable');
+        }
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        if (!data.reply) {
+          throw new Error('No response received');
+        }
+
+        appendMsg(data.reply);
+        botStatus.innerHTML = `<i class="fas fa-circle text-green-500 text-[6px] animate-pulse mr-2"></i>${data.key_in_use ? `Using ${data.key_in_use}` : 'Connected'}`;
+      } catch(err) {
+        console.error('Chat Error:', err);
+        let errorMessage = '😔 Sorry, I encountered an error. Please try again later.';
+        
+        if (err.message.includes('Failed to fetch')) {
+          errorMessage = '🔌 Connection failed. Please check if the server is running.';
+          botStatus.innerHTML = '<i class="fas fa-plug text-red-500 mr-1"></i> Server Offline';
+        } else {
+          botStatus.innerHTML = '<i class="fas fa-exclamation-circle text-red-500 mr-1"></i> Error';
+        }
+        
+        appendMsg(errorMessage);
+      } finally {
+        // Re-enable input with slight delay for better UX
+        setTimeout(() => {
+          input.disabled = false;
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Send</span><i class="fas fa-paper-plane text-sm ml-2"></i>';
+          input.focus();
+        }, 500);
+      }
+    });
+
+  </script>
+</body>
+</html>
